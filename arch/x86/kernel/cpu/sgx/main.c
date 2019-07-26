@@ -13,6 +13,7 @@
 #include <linux/slab.h>
 
 #include <asm/sgx_arch.h>
+#include <asm/sgx.h>
 
 #include "driver.h"
 #include "encl.h"
@@ -803,6 +804,7 @@ int sgx_set_attribute(unsigned long *allowed_attributes,
 	fput(file);
 	return 0;
 }
+EXPORT_SYMBOL_GPL(sgx_set_attribute);
 
 static void __init sgx_init(void)
 {
